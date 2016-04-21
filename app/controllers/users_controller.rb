@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
 	def show
 		@user = User.find(params[:id])
 	end
@@ -8,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create
-  	@user = User.new(params[:user])
+  	@user = User.new(params[user_params])
   	if @user.save
   		# Handle a successful save.
   	else
