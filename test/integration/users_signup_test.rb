@@ -10,9 +10,8 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
   			password_confirmation: 'bar'
   		}
   		end
-  	end
   	assert_template 'users/new'
-  end
+  	end
 
   test 'valid signup information' do
   		get signup_path
@@ -24,6 +23,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
   				password_confirmation: 'password'
   			}
   		end
-  	end
   	assert_template 'users/show'
-end
+  	end
+  end
