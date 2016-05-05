@@ -1,5 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-Malik:
+malik:
   name: Malik Ali
   email: malikali@example.com
   password_digest: <%= User.digest('password') %>
