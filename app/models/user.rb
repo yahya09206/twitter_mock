@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 	has_secure_password
 	validates :password_confirmation, presence: true
 	validates :password, length: {minimum: 6}
+
+	#Returns the hash digest of the given string
 end
