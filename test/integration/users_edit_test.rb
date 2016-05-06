@@ -2,13 +2,13 @@ require 'test_helper'
 
 class UsersEditTest < ActionDispatch::IntegrationTest
   def setup
-  	@user = user(:malik)
+  	@user = users(:malik)
   end
 
   test 'unsuccessful edit' do 
   	get edit_user_path(@user)
   	assert_template 'users/edit'
-  	path user_path(@user), user: {
+  	patch user_path(@user), user: {
   		name: '',
   		email: 'foo@invalid',
   		password: 'foo',
