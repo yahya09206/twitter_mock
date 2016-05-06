@@ -26,7 +26,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
   	patch user_path(@user), user: {
   		name: name,
   		email: email,
-  		password: ''
+  		password: '',
   		password_confirmation: ''
   	}
   	assert_not flash.empty?
