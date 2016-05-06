@@ -45,4 +45,6 @@ end
 		session.delete(:user_id)
 		@current_user = nil
 	end
+
+	# Redirects to stored location (or to the default)
 end
