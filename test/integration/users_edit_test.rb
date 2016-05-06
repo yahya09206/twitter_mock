@@ -17,4 +17,6 @@ class UsersEditTest < ActionDispatch::IntegrationTest
 
   	assert_template 'users/edit'
   end
+
+  
 end
