@@ -9,13 +9,6 @@ class User < ActiveRecord::Base
 	has_secure_password
 	# validates :password_confirmation, presence: true
 	validates :password, presence: true, length: {minimum: 6}, allow_nil: true
-
-	# Returns true if the given token matches the digest
-	def authenticated?(attribute, token)
-		digest = send('#{attribute}_digest')
-		return false if digest.nil?
-		BCrypt::Password.new(digest).is_password?(token)
-	end
 	
 	#Returns the hash digest of the given string
 	def User.digest(string)
@@ -35,6 +28,11 @@ class User < ActiveRecord::Base
 	end
 
 	#Returns true if the given token matches the digest.
+	def authenticated?(attribute, token)
+		digest = send("#{attribute}_digest")
+		return false if digest.nil?
+		BCrypt::Password.new(digest).is_password?(token)
+	end
 	# def authenticated?(remember_token)
 	# 	return false if remember_digest.nil?
 	# 	BCrypt::Password.new(remember_digest).is_password?(remember_token)
