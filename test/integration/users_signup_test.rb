@@ -11,11 +11,14 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
   	assert_no_difference 'User.count' do
   		post users_path, user: {
   			name: '',
+        email: 'user@invalid',
   			password: 'foo',
   			password_confirmation: 'bar'
   		}
   		end
   	assert_template 'users/new'
+    assert_select 'div#error_explanation'
+    assert_select 'div.field_with_errors'
   	end
 
   test 'valid signup information with account activation' do
@@ -28,10 +31,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
   				password_confirmation: 'password'
   			}
   		end
-<<<<<<< HEAD
-  	# assert_template 'users/show'
-   #  assert is_logged_in?
-=======
      assert_equal 1, ActionMailer::Base.deliveries.size
      user = assigns(:user)
      assert_not user.activated?
@@ -50,6 +49,5 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
      follow_redirect!
   	 assert_template 'users/show'
      assert is_logged_in?
->>>>>>> account-activation-password-reset
   	end
   end
