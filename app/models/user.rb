@@ -66,6 +66,8 @@ class User < ActiveRecord::Base
 		UserMailer.password_reset(self).deliver_now
 	end
 
+	# Returns true if a password reset has expire
+
 	private
 
 		# Converts email to all lower-case
