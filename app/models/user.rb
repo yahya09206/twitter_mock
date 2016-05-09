@@ -67,6 +67,9 @@ class User < ActiveRecord::Base
 	end
 
 	# Returns true if a password reset has expire
+	def password_reset_expired?
+		reset_sent < 2.hours.ago
+	end
 
 	private
 
