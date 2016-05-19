@@ -1,7 +1,12 @@
 require 'test_helper'
 
 class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  def setup
+  	@user = users(:malik)
+  end
+
+  test 'micropost interface' do 
+  	log_in_as(@user)
+  	get root_path
+  	assert_select 'div.pagination'
 end
