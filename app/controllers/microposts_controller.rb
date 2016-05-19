@@ -9,6 +9,7 @@ class MicropostsController < ApplicationController
 		else
 			render 'static_pages/home'
 	end
+end
 
 	def destroy
 	end
