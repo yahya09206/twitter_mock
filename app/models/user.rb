@@ -72,6 +72,9 @@ class User < ActiveRecord::Base
 		reset_sent_at < 2.hours.ago
 	end
 
+	# Defines a proto-feed.
+	# see 'Following users' for the full implementation
+
 	private
 
 		# Converts email to all lower-case
