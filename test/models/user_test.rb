@@ -74,4 +74,6 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
+  test 'should follow and unfollow a user'
+
 end
