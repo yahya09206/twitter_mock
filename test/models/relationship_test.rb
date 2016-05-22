@@ -15,4 +15,9 @@ class RelationshipTest < ActiveSupport::TestCase
   	assert_not @relationship.valid?
   end
 
+  test 'should require a followed_id' do 
+  	@relationship.followed_id = nil
+  	assert_not @relationship.valid?
+  end
+
 end
