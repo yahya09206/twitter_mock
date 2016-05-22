@@ -80,6 +80,8 @@ class User < ActiveRecord::Base
 		Micropost.where('user_id = ?', id)
 	end
 
+	
+
 	private
 
 		# Converts email to all lower-case
