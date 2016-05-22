@@ -90,6 +90,11 @@ class User < ActiveRecord::Base
 		active_relationships.find_by(followed_id: other_user.id).destroy
 	end
 
+	#Returns true if the current user is following the other user
+	def following?(other_user)
+		following.include?(other_user)
+	end
+
 	private
 
 		# Converts email to all lower-case
