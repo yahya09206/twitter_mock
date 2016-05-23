@@ -34,7 +34,7 @@ users = User.order(:created_at).take(6)
 end
 
 # Following relationships
-users = User.all?
+users = User.all
 user = users.first
 following = users[2..50]
 followers = users[3..40]
