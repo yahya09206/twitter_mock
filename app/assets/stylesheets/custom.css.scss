@@ -129,6 +129,11 @@ aside {
 	margin-top: 15px;
 }
 
+.stats {
+	overflow: auto;
+	margin-top: 0;
+}
+
 /* Forms */
 input, textarea, select, .uneditable-input {
 	border: 1px solid #bbb;
