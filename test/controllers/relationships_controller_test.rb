@@ -1,7 +1,11 @@
 require 'test_helper'
 
 class RelationshipsControllerTest < ActionController::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  test 'create should require logged-in user' do 
+  	assert_no_difference 'Relationship.count'
+  		post :create
+  	end
+  	assert_redirected_to login_url
+  end
 end
