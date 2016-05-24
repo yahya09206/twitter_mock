@@ -1,4 +1,15 @@
 one:
   follower: malik
   followed: lana
-  
+
+two:
+  follower: malik
+  followed: malory
+
+three:
+  follower: lana
+  followed: malik
+
+four:
+  follower: archer
+  followed: malik
