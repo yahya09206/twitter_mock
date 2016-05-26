@@ -25,7 +25,9 @@ Rails.application.configure do
   host = 'whispering-brushlands-64030.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-    
+    :address => 'smtp.sendgrid.net',
+    :port => '587',
+    :authentication => :plain,
   }
 
   # Disable serving static files from the `/public` folder by default since
